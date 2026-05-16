@@ -1,0 +1,192 @@
+# -------------------------------------------------------------
+# Starship Prompt Configuration
+# Adapted for KDE Breeze Dark theme (Konsole)
+# By Arnold
+# -------------------------------------------------------------
+
+palette = "breeze_dark"
+
+format = """
+[](mauve)\
+$os\
+$username\
+$hostname\
+[](bg:yellow fg:mauve)\
+$directory\
+[](fg:yellow bg:blue)\
+$git_branch\
+$git_status\
+[](fg:blue bg:green)\
+$c\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+[](fg:green bg:surface2)\
+$time\
+[ ](fg:surface2)\
+$cmd_duration\
+$line_break\
+$character
+"""
+
+# ------------------ OS ------------------
+
+[os]
+disabled = false
+style = "bg:mauve fg:crust"
+format = "[$symbol]($style)"
+
+[os.symbols]
+Windows = ""
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇 "
+EndeavourOS = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+
+# ------------------ USER ------------------
+
+[username]
+show_always = true
+style_user = "bg:mauve fg:crust"
+style_root = "bg:red fg:crust"
+format = "[$user]($style)"
+
+# ------------------ HOSTNAME ------------------
+
+[hostname]
+ssh_only = false
+style = "bg:mauve fg:crust"
+format = "[@$hostname]($style)"
+
+# ------------------ DIRECTORY ------------------
+
+[directory]
+style = "fg:crust bg:yellow"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+# ------------------ GIT ------------------
+
+[git_branch]
+symbol = ""
+style = "bg:blue fg:crust"
+format = "[$symbol $branch]($style)"
+
+[git_status]
+style = "bg:blue fg:crust"
+format = "[$all_status$ahead_behind]($style)"
+
+# ------------------ LANGUAGES ------------------
+
+[c]
+symbol = " "
+style = "bg:green fg:crust"
+format = "[$symbol($version)]($style)"
+
+[rust]
+symbol = ""
+style = "bg:green fg:crust"
+format = "[$symbol($version)]($style)"
+
+[golang]
+symbol = ""
+style = "bg:green fg:crust"
+format = "[$symbol($version)]($style)"
+
+[nodejs]
+symbol = ""
+style = "bg:green fg:crust"
+format = "[$symbol($version)]($style)"
+
+[php]
+symbol = ""
+style = "bg:green fg:crust"
+format = "[$symbol($version)]($style)"
+
+[java]
+symbol = " "
+style = "bg:green fg:crust"
+format = "[$symbol($version)]($style)"
+
+[kotlin]
+symbol = ""
+style = "bg:green fg:crust"
+format = "[$symbol($version)]($style)"
+
+[haskell]
+symbol = ""
+style = "bg:green fg:crust"
+format = "[$symbol($version)]($style)"
+
+[python]
+symbol = ""
+style = "bg:green fg:crust"
+format = "[$symbol($version)(#$virtualenv)]($style)"
+
+# ------------------ COMMAND DURATION ------------------
+
+[cmd_duration]
+show_milliseconds = true
+format = " in $duration "
+style = "bg:lavender fg:crust"
+disabled = false
+show_notifications = true
+min_time_to_notify = 45000
+
+# ------------------ TIME ------------------
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:surface2"
+format = "[ $time]($style)"
+
+# ------------------ PROMPT CHARACTER ------------------
+
+[character]
+success_symbol = "[❯❯❯](bold fg:green)"
+error_symbol = "[❯❯❯](bold fg:red)"
+
+# ------------------ COLOR PALETTE ------------------
+
+[palettes.breeze_dark]
+rosewater = "#eff0f1"  # Light gray text
+flamingo = "#9b59b6"   # Purple-pink
+pink = "#c678dd"       # Softer magenta
+mauve = "#9b59b6"      # Main mauve tone
+red = "#ed1515"        # Breeze red
+peach = "#f67400"      # Orange accent
+yellow = "#fdbc4b"     # Soft yellow
+green = "#11d116"      # Bright green
+blue = "#1d99f3"       # Breeze blue
+lavender = "#8fa1b3"   # Muted cyan-blue
+text = "#eff0f1"       # Default text
+surface2 = "#31363b"   # Panel gray
+crust = "#232629"      # Background
