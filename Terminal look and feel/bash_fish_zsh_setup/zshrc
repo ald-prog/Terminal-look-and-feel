@@ -1,0 +1,28 @@
+# ~/.zshrc
+
+# Enable Starship prompt
+eval "$(starship init zsh)"
+
+# Aliases
+alias ls='exa -al --color=always --group-directories-first'
+alias cat='bat'
+alias find='fd'
+alias grep='rg'
+alias cd='z'
+alias update='sudo pacman -Syu && yay -Syu'
+alias gs='git status'
+alias gc='git commit'
+alias ga='git add'
+
+# Environment
+export EDITOR=nano
+export PATH="$HOME/.local/bin:$PATH"
+
+# Enable zoxide
+eval "$(zoxide init zsh)"
+
+# Optional: enable completion
+autoload -Uz compinit
+compinit
+
+fastfetch

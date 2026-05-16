@@ -1,0 +1,6 @@
+file:///home/arnold/.bashrc
+file:///home/arnold/.zshenv
+file:///home/arnold/.zshrc
+
+
+file:///home/arnold/recovered/.config/starship.toml

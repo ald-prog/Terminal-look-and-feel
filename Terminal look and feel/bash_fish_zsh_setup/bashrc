@@ -1,0 +1,33 @@
+# ~/.bashrc
+
+# Enable Starship prompt
+eval "$(starship init bash)"
+
+# Enable zoxide smart cd
+eval "$(zoxide init bash)"
+
+# Aliases for modern tools (Fish-like)
+alias ls='exa -al --color=always --group-directories-first'
+alias cat='bat'
+alias cd='z'
+alias update='sudo pacman -Syu && yay -Syu'
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+
+# Fuzzy finder
+export FZF_DEFAULT_COMMAND='fd --type f'
+
+# Environment
+export EDITOR=nano
+export PATH="$HOME/.local/bin:$PATH"
+
+# bash-preexec (optional, for command preview and hooks)
+[[ -f ~/.bash-preexec/bash-preexec.sh ]] && source ~/.bash-preexec/bash-preexec.sh
+
+# Flutter environment setup
+unset rc
+export PATH="$HOME/flutter/bin:$PATH"
+
+fastfetch
+. "$HOME/.cargo/env"
